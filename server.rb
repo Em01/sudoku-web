@@ -17,18 +17,26 @@ def random_sudoku
 end
 
 def puzzle(sudoku)
-    # challenge = sudoku
+    new_sud = sudoku.dup
     positions = (1..81).to_a.sample(40)
     positions.each do |position| 
-      sudoku[position]= ""
+      new_sud[position]= ""
     end
-    sudoku
+    new_sud  
 end
 
-get '/' do
+  get '/solution' do
+    @current_solution = session[:solution]
+    puts session[:solution]
+    erb :index
+  end
+
+  get '/' do
   sudoku = random_sudoku
   session[:solution] = sudoku
   @current_solution = puzzle(sudoku)
   erb :index
-end
+  end
+
+  
 
