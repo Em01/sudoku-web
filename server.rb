@@ -27,7 +27,7 @@ end
 
   get '/solution' do
     @current_solution = session[:solution]
-    puts session[:solution]
+    # puts session[:solution]
     erb :index
   end
 
