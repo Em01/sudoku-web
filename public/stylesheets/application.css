@@ -1,6 +1,6 @@
 div.box, div.cell {
   display: inline-block;
-  border: 1px solid red;
+  border: 1px solid pink;
 }
 
 .cell input {
@@ -15,5 +15,5 @@ div.box, div.cell {
 
 body {
   text-align: center;
-  font-family: Arial;
+  font-family: sans-serif;
 }
