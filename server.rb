@@ -3,7 +3,8 @@ require_relative './lib/sudoku'
 require_relative './lib/cell'
 require 'sinatra/partial'
 set :partial_template_engine, :erb
-
+require 'rack-flash'
+use Rack::Flash
 
 enable :sessions
 
@@ -58,8 +59,8 @@ def box_order_to_row_order(cells)
   three_rows_of_three = three_boxes.map do |box|
     row_number_in_a_box = i % 3
     first_cell_in_the_row_index = row_number_in_a_box * 3 
-  end
     box[first_cell_in_the_row_index, 3]
+  end
     memo += three_rows_of_three.flatten
   }
 end
@@ -74,6 +75,9 @@ end
   
   def prepare_to_check_solution
     @check_solution = session[:check_solution]
+    if @check_solution
+      flash[:notice] = "Incorrect values are highlighted in yellow"
+    end
     session[:check_solution] = nil
   end
 

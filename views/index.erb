@@ -7,12 +7,14 @@
   </head>
   <body>
   <h1>Life is too short for playing Sudoku</h1>
+  <div id="flash">
+    <%= flash[:notice] %>
+  </div>
   <div id="sudoku">
     <form action="/" method="post">
       <!-- all boxes, rows and cells -->
       <button>Check solution</button>
-    </form>
-  </div>    
+     
   <!-- one div for each row -->
   <% 3.times do |row| %>
   <div class='row'>
@@ -38,6 +40,8 @@
        <% end %>
      </div>
     <% end %>
-   </div>
+   </form>
+  </div>   
+  </div>
  </body>
  </html>
