@@ -21,9 +21,9 @@ def random_sudoku
     sudoku.to_s.chars
 end
 
-def puzzle(sudoku)
+def puzzle(sudoku,level)
     new_sud = sudoku.dup
-    positions = (1..81).to_a.sample(40)
+    positions = (1..81).to_a.sample(level)
     positions.each do |position| 
       new_sud[position]= ""
     end
@@ -46,9 +46,10 @@ end
 
   def generate_new_puzzle_if_necessary
     return if session[:current_solution]
+    level = 60
     sudoku = random_sudoku
     session[:solution] = sudoku
-    session[:puzzle] = puzzle(sudoku)
+    session[:puzzle] = puzzle(sudoku,level)
     session[:current_solution] = session[:puzzle]
   end
   
@@ -64,6 +65,20 @@ end
     @current_solution = session[:solution]
     # puts session[:solution]
     erb :index
+  end
+
+  get '/E' do
+    puts "Easy"
+  erb :index
+  end
+
+get '/M' do
+    puts "Medium"
+  erb :index
+  end
+get '/D' do
+    puts "Difficult"
+  erb :index
   end
 
   get '/' do

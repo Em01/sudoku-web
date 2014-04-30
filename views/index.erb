@@ -14,8 +14,8 @@
   <div id="sudoku">
     <form action="/" method="post">
     <!-- all boxes, rows and cells -->   
-  <button>Check solution</button>
-
+      <button>Check solution</button>
+    
     <!-- one div for each row -->
     <% 3.times do |row| %>
     <div class='row'>
@@ -43,6 +43,18 @@
       <% end %>
      </form>
     </div>   
+    </div>
+    <div id="Easy">
+      <form action="E" method="post">
+      <button>Easy</button>
+    </div>
+    <div id="Medium">
+      <form action="M" method="post">
+      <button>Medium</button>
+    </div>
+    <div id="Difficult">
+      <form action="D" method="post">
+      <button>Dificult</button>
     </div>
  </body>
  </html>
