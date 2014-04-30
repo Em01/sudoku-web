@@ -23,7 +23,7 @@ end
 
 def puzzle(sudoku,level)
     new_sud = sudoku.dup
-    positions = (1..81).to_a.sample(level)
+    positions = (0..80).to_a.sample(level)
     positions.each do |position| 
       new_sud[position]= ""
     end
@@ -42,14 +42,18 @@ def box_order_to_row_order(cells)
   end
     memo += three_rows_of_three.flatten
   }
-end
+  end
+
+  def level_decider(level=80)
+    @level = level
+  end
 
   def generate_new_puzzle_if_necessary
     return if session[:current_solution]
-    level = 60
+    level_decider
     sudoku = random_sudoku
     session[:solution] = sudoku
-    session[:puzzle] = puzzle(sudoku,level)
+    session[:puzzle] = puzzle(sudoku,50)
     session[:current_solution] = session[:puzzle]
   end
   
@@ -65,20 +69,6 @@ end
     @current_solution = session[:solution]
     # puts session[:solution]
     erb :index
-  end
-
-  get '/E' do
-    puts "Easy"
-  erb :index
-  end
-
-get '/M' do
-    puts "Medium"
-  erb :index
-  end
-get '/D' do
-    puts "Difficult"
-  erb :index
   end
 
   get '/' do
