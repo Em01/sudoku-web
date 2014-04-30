@@ -24,7 +24,8 @@ div.cell {
 
 body {
   text-align: center;
-  font-family: sans-serif;}
+  font-family: sans-serif;
+}
 
 .incorrect {
   background-color: yellow;
