@@ -12,36 +12,35 @@
   </div>
   <div id="sudoku">
     <form action="/" method="post">
-      <!-- all boxes, rows and cells -->
-      <button>Check solution</button>
-     
-  <!-- one div for each row -->
-  <% 3.times do |row| %>
-  <div class='row'>
-     <!-- we want to create seperate div elements for boxes to style them using CSS -->
-    <% 3.times do |box| %>
-      <div class="box">
-         <!-- each box will have nine cells -->
-         <% 3.times do |cell_row| %>
-              <div class="cell-row">
-            <% 3.times do |cell| %>
-                 <div class="cell">
-                  <!-- every cell will have an input field -->
-                  <% cell_index = row * 27 + box * 3 + cell_row * 9 + cell %>
-                  <% cell_value = cell_value(@current_solution[cell_index]) %>
-                  <% colour_class = colour_class(@check_solution, @puzzle[cell_index], @current_solution[cell_index], @solution[cell_index])  %>
-                  <input name="cell[]" class="<%= colour_class %>" type="text" 
-                    maxlength="1" autocomplete="off" value = "<%= cell_value %>" >
-                </div>
-              <% end %>
-            </div>
-          <%end %>
-        </div>
-       <% end %>
-     </div>
-    <% end %>
-   </form>
-  </div>   
-  </div>
+    <!-- all boxes, rows and cells -->   
+  <button>Check solution</button>
+    <!-- one div for each row -->
+    <% 3.times do |row| %>
+    <div class='row'>
+      <!-- we want to create seperate div elements for boxes to style them using CSS -->
+      <% 3.times do |box| %>
+        <div class="box">
+           <!-- each box will have nine cells -->
+           <% 3.times do |cell_row| %>
+                <div class="cell-row">
+              <% 3.times do |cell| %>
+                   <div class="cell">
+                    <!-- every cell will have an input field -->
+                    <% cell_index = row * 27 + box * 3 + cell_row * 9 + cell %>
+                    <% cell_value = cell_value(@current_solution[cell_index]) %>
+                    <% colour_class = colour_class(@check_solution, @puzzle[cell_index], @current_solution[cell_index], @solution[cell_index])  %>
+                    <input name="cell[]" class="<%= colour_class %>" type="text" 
+                      maxlength="1" autocomplete="off" value = "<%= cell_value %>" >
+                  </div>
+                <% end %>
+              </div>
+            <%end %>
+          </div>
+         <% end %>
+       </div>
+      <% end %>
+     </form>
+    </div>   
+    </div>
  </body>
  </html>
