@@ -1,6 +1,13 @@
-div.box, div.cell {
+div.box
+{
   display: inline-block;
-  border: 1px solid pink;
+  outline: 2px solid red;
+}
+
+div.cell {
+  display: inline-block;
+  
+  border: 2px solid green;
 }
 
 .cell input {
