@@ -62,7 +62,7 @@ def box_order_to_row_order(cells)
     if @check_solution
       flash[:notice] = "Incorrect values are highlighted in yellow"
     end
-    session[:check_solution] = nil
+    # session[:check_solution] = nil
   end
 
   get '/solution' do
@@ -80,15 +80,15 @@ def box_order_to_row_order(cells)
     erb :index
   end
 
-  post '/' do
+  post '/check-input' do
     cells = box_order_to_row_order(params["cell"])
     session[:current_solution] = cells.map{ |value| value.to_i  }.join
     session[:check_solution] = true
     redirect to("/")
-    session.clear
+    
   end
 
-  post '/Easy' do
+  post '/easy' do
     session.clear
     sudoku = random_sudoku
     session[:solution] = sudoku
@@ -97,7 +97,7 @@ def box_order_to_row_order(cells)
     redirect to("/")
   end
 
-post '/Medium' do
+post '/medium' do
     session.clear
     sudoku = random_sudoku
     session[:solution] = sudoku
@@ -106,7 +106,7 @@ post '/Medium' do
     redirect to("/")
   end
 
-post '/Difficult' do
+post '/difficult' do
     session.clear
     sudoku = random_sudoku
     session[:solution] = sudoku
@@ -115,7 +115,7 @@ post '/Difficult' do
     redirect to("/")
   end
 
-get '/Answer' do
+get '/answer' do
   @current_solution = session[:solution]
   @solution = session[:solution]
   @puzzle = session[:solution]  

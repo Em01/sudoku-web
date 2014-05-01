@@ -1,36 +1,28 @@
-<!-- "Hello sudoku" -->
-<html>
-<body background="images/skulls.png">
-<head>
-  <title>Sudoku Game</title>
-    <!-- link to the CSS stylesheet -->
-  <link href="/stylesheets/application.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
+
   <h1>Life is too short for playing Sudoku</h1>
   <div id="flash">
     <%= flash[:notice] %>
   </div>
   <div id="sudoku">
     
-     <form action="/Easy" method="post">
-     <input type = "submit" value="Easy Game" name="level">
+     <form action="/easy" method="post">
+     <button>Easy Game</button>
      </form>
      
-    <form action="/Medium" method="post">
-     <input type = "submit" value="Medium Game" name="level">
+    <form action="/medium" method="post">
+     <button>Middle Game</button>
      </form>
 
-     <form action="/Difficult" method="post">
-     <input type = "submit" value="Difficult Game" name="level">
+     <form action="/difficult" method="post">
+      <button>Difficult Game</button>
      </form>
 
-    <form action="/Answer" method="get">
+    <form action="/answer" method="get">
      <input type = "submit" value="I give up" name="level">
      </form>
 
 
-    <form action="/" method="post">
+    <form action="/check-input" method="post">
     <!-- all boxes, rows and cells -->   
       <button>Check solution</button>  
 
@@ -54,29 +46,4 @@
       <% end %>
      </form>
     </div>   
-    </div>
 
-
-    <!-- <form action="/new" method="POST">
-        <button type="easy"     class="btn">Post</button>
-        <button type="medium"   class="btn">Post</button>
-        <button type="dificult" class="btn">Post</button>
-    </form>
- -->
-
- </body>
- </html>
-
-
-   <!--  <div id="Easy">
-      <form action="/" method="post">
-      <button>Easy</button>
-    </div>
-    <div id="Medium">
-      <form action="M" method="post">
-      <button>Medium</button>
-    </div>
-    <div id="Difficult">
-      <form action="D" method="post">
-      <button>Dificult</button>
-    </div>
