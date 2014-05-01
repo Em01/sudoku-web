@@ -1,4 +1,4 @@
-<!-- "Hello sudoku" -->
+"Hello sudoku" -->
 <html>
 <body background="images/skulls.png">
 <head>
@@ -12,10 +12,15 @@
     <%= flash[:notice] %>
   </div>
   <div id="sudoku">
+    
+     <form action="/Easy" method="post">
+     <input type = "submit" value="Easy" name="level">
+     </form>
+    
     <form action="/" method="post">
     <!-- all boxes, rows and cells -->   
       <button>Check solution</button>  
-    <!-- one div for each row -->
+         <!-- one div for each row -->
     <% 3.times do |row| %>
     <div class='row'>
       <!-- we want to create seperate div elements for boxes to style them using CSS -->
@@ -67,4 +72,4 @@
     <div id="Difficult">
       <form action="D" method="post">
       <button>Dificult</button>
-    </div> -->
+    </div>

@@ -53,7 +53,7 @@ def box_order_to_row_order(cells)
     level_decider
     sudoku = random_sudoku
     session[:solution] = sudoku
-    session[:puzzle] = puzzle(sudoku,50)
+    session[:puzzle] = puzzle(sudoku,@level)
     session[:current_solution] = session[:puzzle]
   end
   
@@ -85,6 +85,15 @@ def box_order_to_row_order(cells)
     session[:current_solution] = cells.map{ |value| value.to_i  }.join
     session[:check_solution] = true
     redirect to("/")
+    session.clear
+  end
+
+  post '/Easy' do
+    sudoku = random_sudoku
+    session[:solution] = sudoku
+    session[:puzzle] = puzzle(sudoku,10)
+    session[:current_solution] = session[:puzzle]
+
   end
 
   helpers do
