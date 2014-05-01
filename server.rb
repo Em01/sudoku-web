@@ -44,16 +44,16 @@ def box_order_to_row_order(cells)
   }
   end
 
-  def level_decider(level=80)
-    @level = level
-  end
+  # def level_decider(level=80)
+  #   @level = level
+  # end
 
   def generate_new_puzzle_if_necessary
     return if session[:current_solution]
     level_decider
     sudoku = random_sudoku
     session[:solution] = sudoku
-    session[:puzzle] = puzzle(sudoku,@level)
+    session[:puzzle] = puzzle(sudoku,5)
     session[:current_solution] = session[:puzzle]
   end
   
@@ -115,6 +115,13 @@ post '/Difficult' do
     session.clear
   end
 
+post'/Answer' do
+    # @puzzle = session[:solution]
+    # erb :index
+    @puzzle
+    redirect to("/")
+    session.clear
+  end
 
 
   helpers do
