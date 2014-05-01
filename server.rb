@@ -91,10 +91,31 @@ def box_order_to_row_order(cells)
   post '/Easy' do
     sudoku = random_sudoku
     session[:solution] = sudoku
-    session[:puzzle] = puzzle(sudoku,10)
+    session[:puzzle] = puzzle(sudoku,20)
     session[:current_solution] = session[:puzzle]
-
+    redirect to("/")
+    session.clear
   end
+
+post '/Medium' do
+    sudoku = random_sudoku
+    session[:solution] = sudoku
+    session[:puzzle] = puzzle(sudoku,40)
+    session[:current_solution] = session[:puzzle]
+    redirect to("/")
+    session.clear
+  end
+
+post '/Difficult' do
+    sudoku = random_sudoku
+    session[:solution] = sudoku
+    session[:puzzle] = puzzle(sudoku,60)
+    session[:current_solution] = session[:puzzle]
+    redirect to("/")
+    session.clear
+  end
+
+
 
   helpers do
 
