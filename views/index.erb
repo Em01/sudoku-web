@@ -3,9 +3,12 @@
   <div id="flash">
     <%= flash[:notice] %>
   </div>
-  <div id="sudoku">
+
+  <table style="width:1200px;height:500px;" cellpadding="0" cellspacing="0">
+  
+  <td style="width:30px;vertical-align:center;">
     
-     <form action="/easy" method="post">
+    <form action="/easy" method="post">
      <button>Easy Game</button>
      </form>
      
@@ -16,36 +19,18 @@
      <form action="/difficult" method="post">
       <button>Difficult Game</button>
      </form>
-
-    <!-- <form action="/answer" method="get">
-     <input type = "submit" value="I give up" name="level">
-     </form>
- -->
-    <form action="/save" method="get">
-      <button>Save Game</button>
-     </form>
-
-     <form action="/answer" method="get">
-      <button>I give up</button>
-     </form>
-
-    <form action="/restart" method="get">
-      <button>Restart</button>
-     </form>
     
-    <form action="/thing" method="get">
-      <button>Thing</button>
-     </form>
-    
-    <form action="/thing" method="get">
-      <button>Thing</button>
-     </form>
-
     <form action="/check-input" method="post">
     <!-- all boxes, rows and cells -->   
       <button>Check solution</button>  
-
-
+    <!-- <form action="/answer" method="get">
+     <input type = "submit" value="I give up" name="level">
+     </form>-->
+    
+  <td style="width:200px;vertical-align:center;">
+  <div id="sudoku">
+    
+    
   <div class = 'board'>
     <!-- one div for each row -->
     <% 3.times do |row| %>
@@ -68,4 +53,33 @@
      </form>
     </div>
   </div> 
+  </td>
 
+<td style="width:50px;vertical-align:center;">
+    <form action="/thing" method="get">
+      <button>Thing</button>
+     </form>
+    
+    <form action="/thing" method="get">
+      <button>Thing</button>
+     </form>
+     <!-- <form action="/answer" method="get">
+     <input type = "submit" value="I give up" name="level">
+     </form>-->
+
+    <form action="/save" method="get">
+      <button>Save Game</button>
+     </form>
+
+     <form action="/answer" method="get">
+      <button>I give up</button>
+     </form>
+
+    <form action="/restart" method="get">
+      <button>Restart</button>
+     </form>
+    
+    
+  </td>
+
+</table>
