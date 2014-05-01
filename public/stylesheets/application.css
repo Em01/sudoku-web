@@ -10,8 +10,8 @@ div.cell {
   border: 2px solid green;
 }
 
-button {
-background: #222 url(/images/alert-overlay.png) repeat-x;
+button { 
+background: #282;
 display: inline-block;
 padding: 5px 10px 6px;
 color: #fff;
@@ -57,5 +57,18 @@ body {
 */}
 
 #flash {
+
   margin: 20px;
+
+
+font-weight:bold;
+color:#F52F18;
+/*background-color:#D4D4D4;*/
+letter-spacing:1pt;
+word-spacing:2pt;font-size:15px;
+text-align:center;
+font-family:comic sans, comic sans ms, cursive, verdana, arial, sans-serif;line-height:1;
+
+
+
 }

@@ -10,23 +10,44 @@
      </form>
      
     <form action="/medium" method="post">
-     <button>Middle Game</button>
+     <button>Medium Game</button>
      </form>
 
      <form action="/difficult" method="post">
       <button>Difficult Game</button>
      </form>
 
-    <form action="/answer" method="get">
+    <!-- <form action="/answer" method="get">
      <input type = "submit" value="I give up" name="level">
      </form>
+ -->
+    <form action="/save" method="get">
+      <button>Save Game</button>
+     </form>
 
+     <form action="/answer" method="get">
+      <button>I give up</button>
+     </form>
+
+    <form action="/restart" method="get">
+      <button>Restart</button>
+     </form>
+    
+    <form action="/thing" method="get">
+      <button>Thing</button>
+     </form>
+    
+    <form action="/thing" method="get">
+      <button>Thing</button>
+     </form>
 
     <form action="/check-input" method="post">
     <!-- all boxes, rows and cells -->   
       <button>Check solution</button>  
 
-         <!-- one div for each row -->
+
+  <div class = 'board'>
+    <!-- one div for each row -->
     <% 3.times do |row| %>
     <div class='row'>
       <!-- we want to create seperate div elements for boxes to style them using CSS -->
@@ -45,5 +66,6 @@
        </div>
       <% end %>
      </form>
-    </div>   
+    </div>
+  </div> 
 

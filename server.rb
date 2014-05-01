@@ -53,8 +53,11 @@ def box_order_to_row_order(cells)
     # level_decider
     sudoku = random_sudoku
     session[:solution] = sudoku
-    session[:puzzle] = puzzle(sudoku,5)
+    session[:puzzle] = puzzle(sudoku,20)
     session[:current_solution] = session[:puzzle]
+  end
+
+  def store_game
   end
   
   def prepare_to_check_solution
@@ -62,7 +65,7 @@ def box_order_to_row_order(cells)
     if @check_solution
       flash[:notice] = "Incorrect values are highlighted in yellow"
     end
-    # session[:check_solution] = nil
+    session[:check_solution] = nil
   end
 
   get '/solution' do
@@ -120,9 +123,14 @@ get '/answer' do
   @solution = session[:solution]
   @puzzle = session[:solution]  
   erb :index
-
   end
 
+get '/save' do
+  @current_solution = session[:current_solution]
+  @solution = session[:current_solution]
+  @puzzle = session[:current_solution]  
+  erb :index
+  end
 
   helpers do
 
