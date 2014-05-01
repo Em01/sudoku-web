@@ -50,7 +50,7 @@ def box_order_to_row_order(cells)
 
   def generate_new_puzzle_if_necessary
     return if session[:current_solution]
-    level_decider
+    # level_decider
     sudoku = random_sudoku
     session[:solution] = sudoku
     session[:puzzle] = puzzle(sudoku,5)
@@ -72,8 +72,8 @@ def box_order_to_row_order(cells)
   end
 
   get '/' do
-    prepare_to_check_solution
     generate_new_puzzle_if_necessary
+    prepare_to_check_solution
     @current_solution = session[:current_solution] || session[:puzzle]
     @solution = session[:solution]
     @puzzle = session[:puzzle]  
@@ -89,38 +89,38 @@ def box_order_to_row_order(cells)
   end
 
   post '/Easy' do
+    session.clear
     sudoku = random_sudoku
     session[:solution] = sudoku
     session[:puzzle] = puzzle(sudoku,20)
     session[:current_solution] = session[:puzzle]
     redirect to("/")
-    session.clear
   end
 
 post '/Medium' do
+    session.clear
     sudoku = random_sudoku
     session[:solution] = sudoku
     session[:puzzle] = puzzle(sudoku,40)
     session[:current_solution] = session[:puzzle]
     redirect to("/")
-    session.clear
   end
 
 post '/Difficult' do
+    session.clear
     sudoku = random_sudoku
     session[:solution] = sudoku
     session[:puzzle] = puzzle(sudoku,60)
     session[:current_solution] = session[:puzzle]
     redirect to("/")
-    session.clear
   end
 
-post'/Answer' do
-    # @puzzle = session[:solution]
-    # erb :index
-    @puzzle
-    redirect to("/")
-    session.clear
+get '/Answer' do
+  @current_solution = session[:solution]
+  @solution = session[:solution]
+  @puzzle = session[:solution]  
+  erb :index
+
   end
 
 
