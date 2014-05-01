@@ -30,6 +30,7 @@ class Sudoku
   # 9 5 2 | 6 8 1 | 7 4 3
   # 8 6 4 | 3 7 9 | 1 2 5
   # 1 3 7 | 2 5 4 | 6 9 8
+  
   def to_board
     values = @cells.map(&:value) # get the values out of the cell objects
     rows = values.each_slice(COLUMN_SIZE).map do |row| # take every 9 values (that's a row)
