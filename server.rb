@@ -132,6 +132,15 @@ get '/save' do
   erb :index
   end
 
+get '/restart' do
+    session.clear
+    sudoku = random_sudoku
+    session[:solution] = sudoku
+    session[:puzzle] = puzzle(sudoku,20)
+    session[:current_solution] = session[:puzzle]
+    redirect to("/")
+  end
+
   helpers do
 
   def colour_class(solution_to_check, puzzle_value, current_solution_value, solution_value) 
