@@ -5,6 +5,9 @@ require 'sinatra/partial'
 set :partial_template_engine, :erb
 require 'rack-flash'
 use Rack::Flash
+configure :production do
+require 'newrelic_rpm'
+end
 
 enable :sessions
 set :session_secret, '*&(^B234'
