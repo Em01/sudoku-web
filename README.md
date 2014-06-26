@@ -3,7 +3,7 @@ This was the week five project at Makers Academy. The goal was to build a websit
 
 ##Technologies Used
 - Sublime Text
-- Git & GitHub
+- Git
 - Gems
 - Sinatra
 - Ruby
