@@ -2,7 +2,7 @@
 
 ![](Sudoku.png?raw=true)
 
-This was the week five project at Makers Academy. The goal was to build a website that would allow us to play Sudoku online, a large focus of this project was front end. The basic code for a working Sudoku puzzle was given to us by @shadchnev for which we had to expand upon. The app can be viwed through Heroku. 
+This was the week five project at Makers Academy, it was set by our coach Antony Denyer. The goal was to build a website that would allow us to play Sudoku online, a large focus of this project was front end. The basic code for a working Sudoku puzzle was given to us by @shadchnev for which we had to expand upon. The app can be viwed through Heroku. 
 [App on Heroku]
 
 ##Technologies Used
