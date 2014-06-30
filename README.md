@@ -2,7 +2,8 @@
 
 ![](Sudoku.png?raw=true)
 
-This was the week five project at Makers Academy. The goal was to build a website that would allow us to play Sudoku online, a large focus of this project was front end. The basic code for a working Sudoku puzzle was given to us by @shadchnev for which we had to expand upon.
+This was the week five project at Makers Academy. The goal was to build a website that would allow us to play Sudoku online, a large focus of this project was front end. The basic code for a working Sudoku puzzle was given to us by @shadchnev for which we had to expand upon. The app can be viwed through Heroku. 
+[App on Heroku]
 
 ##Technologies Used
 - Sublime Text
@@ -20,9 +21,18 @@ This was the week five project at Makers Academy. The goal was to build a websit
 ##Pairing
 This projct was made by the following colaborators:
 - Emma Williams
-- Shelly Hope
-- Steve Musgrave
+- [Shelley Hope]
+- [Steve Musgrave]
 
 ##Instructions
-This app is live at the following address:
-http//fierce-dawn-5665.herokuapp.com
+To run the app
+----
+````sh
+git clone git@github.com:Em01/sudoku-web.git
+cd sudoku-web
+shotgun server.rb
+```
+
+[Shelley Hope]:https://github.com/ShelleyHope
+[Steve Musgrave]:https://github.com/StephanMusgrave
+[App on Heroku]:http//fierce-dawn-5665.herokuapp.com
