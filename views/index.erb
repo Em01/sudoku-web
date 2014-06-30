@@ -4,9 +4,9 @@
     <%= flash[:notice] %>
   </div>
 
-  <table style="width:1200px;height:500px;" cellpadding="0" cellspacing="0">
+  <table style="width:1000px;height:500px;" cellpadding="0" cellspacing="0">
   
-  <td style="width:40px;vertical-align:center;">
+  <td style="width:40px;text-align:right;vertical-align:center;">
     
     <form action="/easy" method="post">
      <button>Easy Game</button>
@@ -61,11 +61,16 @@
       <button>Thing</button>
      </form>
  -->     <!-- <form action="/answer" method="get">
+ 
      <input type = "submit" value="I give up" name="level">
      </form>-->
 
     <form action="/save" method="get">
-      <button>Save Game</button>
+      <button>Save game</button>
+     </form>
+
+     <form action="/load" method="get">
+      <button>Load the saved game</button>
      </form>
 
      <form action="/answer" method="get">

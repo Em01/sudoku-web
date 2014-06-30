@@ -135,6 +135,13 @@ get '/save' do
   erb :index
   end
 
+  get '/load' do
+  @current_solution = session[:current_solution]
+  @solution = session[:current_solution]
+  @puzzle = session[:current_solution]  
+  erb :index
+  end
+
 get '/restart' do
     session.clear
     sudoku = random_sudoku
